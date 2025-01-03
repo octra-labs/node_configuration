@@ -23,7 +23,7 @@ Step 2:
 
 ```eval $(opam env)```
 
-```opam install ocamlfind```
+```opam install ocamlfind lwt_ppx```
 
 ```opam reinstall yojson```
 
