@@ -19,7 +19,7 @@ Step 2:
 
 ```opam switch list```
 
-```opam switch set <switch_name>```
+```opam switch set 5.2.1```
 
 ```eval $(opam env)```
 
