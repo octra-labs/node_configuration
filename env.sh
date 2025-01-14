@@ -45,7 +45,7 @@ fi
 
 printf "${YELLOW}Initializing OPAM...${RESET}\n"
 opam init --disable-sandboxing -y
-opam switch create 5.2.1 -y
+opam switch create 5.2.1 -y || true
 opam switch 5.2.1
 eval $(opam env)
 
@@ -55,6 +55,8 @@ opam install -y mirage mirage-crypto mirage-runtime mirage-clock-unix
 opam install -y irmin irmin-mirage irmin-http irmin-unix
 opam install -y conduit-lwt tls logs fmt
 opam install -y alcotest ounit bisect_ppx merlin ocp-indent utop
+opam install -y ocamlfind lwt_ppx
+opam reinstall -y yojson
 
 printf "${YELLOW}Verifying installation...${RESET}\n"
 ocaml --version
