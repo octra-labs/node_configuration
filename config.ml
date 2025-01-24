@@ -44,12 +44,12 @@ let get_command_output cmd =
 let ic = Unix.open_process_in cmd in
 try
   let output = input_line ic in
-  close_in ic;
+  let _ = Unix.close_process_in ic in
   if String.trim output = "" then "N/A" else output
-with End_of_file -> (
-  close_in ic;
+with 
+| End_of_file ->
+  let _ = Unix.close_process_in ic in
   "N/A"
-)
 
 let rec prompt_input prompt validate error_message =
 print_string (cyan "→ " ^ bold prompt ^ ": ");
