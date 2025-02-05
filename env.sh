@@ -15,7 +15,7 @@ printf "${BOLD}${YELLOW}Starting environment setup...${RESET}\n"
 if [ "$OS" == "Linux" ]; then
   printf "${GREEN}Detected OS: Linux${RESET}\n"
   sudo apt-get update
-  sudo apt-get install -y curl wget git m4 build-essential pkg-config libffi-dev libgmp-dev libssl-dev zlib1g-dev
+  sudo apt-get install -y curl wget git m4 build-essential pkg-config libffi-dev libgmp-dev libssl-dev zlib1g-dev libsqlite3-dev
 elif [ "$OS" == "Darwin" ]; then
   printf "${GREEN}Detected OS: macOS${RESET}\n"
   brew update
